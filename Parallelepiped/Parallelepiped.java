@@ -60,6 +60,21 @@ public class Parallelepiped{
         return multiplyNumbers( multiplyNumbers( this.baseHeight ,this.baseWidth) , this.height);
     };
 
+    public Number getBasePerimeter()
+    {
+        return addNumbers( this.baseHeight , this.baseWidth );
+    };
+
+    public Number getLateralSurfaceArea()
+    {
+        return multiplyNumbers( getBasePerimeter() , this.height );
+    };
+
+    public Number getTotalSurfaceArea()
+    {
+        return addNumbers( getLateralSurfaceArea() , multiplyNumbers( getBaseArea() , 2 ) );
+    };
+
     private static Number addNumbers(Number a, Number b) {
 
         if(a instanceof Double || b instanceof Double) {
